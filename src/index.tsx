@@ -1,15 +1,27 @@
+import './index.css';
+import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
+import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import TodoLayoutComponent from './to-do-list/components/TodoLayout.component';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+// Routes
+const routesChilden: RouteObject[] = [
+  { path: '/to-do-list', element: <TodoLayoutComponent />},
+];
+
+const rootRoutes = createBrowserRouter([
+  { path: '/', element: <App />, children: routesChilden },
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={rootRoutes} />
   </React.StrictMode>
 );
 

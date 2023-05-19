@@ -225,39 +225,35 @@ const TodoLayoutComponent = () => {
     };
 
     return (
-        <Grid container className="content-center-x-y"  spacing={2} justifyContent="center" alignItems="center">
-            <Grid item xs={12} md={6}>
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant="h5">
-                                    TODO INPUT
-                                </Typography>
-                                <TodoInputComponent 
-                                    onOpenModalToAddOrUpdateTask={onOpenModalToAddOrUpdateTask}
-                                />
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant="h5">
-                                    TODO LIST
-                                </Typography>
-                                <TodoListComponent 
-                                    currentTaskList={taskListCopy}
-                                    onOpenModalToDeleteTask={onOpenModalToDeleteTask}
-                                    onOpenModalToAddOrUpdateTask={onOpenModalToAddOrUpdateTask}
-                                    onUpdateTaskStatusById={onUpdateTaskStatusById}
-                                    onShowAllTask={onShowAllTask}
-                                    onShowAllTaskByStatus={onShowAllTaskByStatus}
-                                />
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                </Grid>
+        <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <Card>
+                    <CardContent>
+                        <Typography variant="h5">
+                            TODO INPUT
+                        </Typography>
+                        <TodoInputComponent 
+                            onOpenModalToAddOrUpdateTask={onOpenModalToAddOrUpdateTask}
+                        />
+                    </CardContent>
+                </Card>
+            </Grid>
+            <Grid item xs={12}>
+                <Card>
+                    <CardContent>
+                        <Typography variant="h5">
+                            TODO LIST
+                        </Typography>
+                        <TodoListComponent 
+                            currentTaskList={taskListCopy}
+                            onOpenModalToDeleteTask={onOpenModalToDeleteTask}
+                            onOpenModalToAddOrUpdateTask={onOpenModalToAddOrUpdateTask}
+                            onUpdateTaskStatusById={onUpdateTaskStatusById}
+                            onShowAllTask={onShowAllTask}
+                            onShowAllTaskByStatus={onShowAllTaskByStatus}
+                        />
+                    </CardContent>
+                </Card>
             </Grid>
 
             <TodoModalComponent
@@ -267,7 +263,6 @@ const TodoLayoutComponent = () => {
             <TodoDeleteModalComponent
                 modalToDeleteTask={modalToDeleteTask}
             />
-
         </Grid>
     );
 

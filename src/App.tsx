@@ -1,76 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import { AppBar, Box, Button, Card, CardContent, Grid, Toolbar } from '@mui/material';
 import './App.css';
+import { Link, Outlet } from 'react-router-dom';
 
-
-import AppPracticaUno from './to-move/components/AppPracticaUno';
-import { AppProvider } from './to-move/contexts/AppProvider';
-import TodoLayoutComponent from './to-do-list/components/TodoLayout.component';
-
-// style components
-import styled from "styled-components";
-import MainComponent from './to-move/ejercicios/contextos';
-import PersonalMainComponent from './to-move/test-react-redux/personal.component';
-
-const PrettyDiv = styled.div`
-  background-color: pink;
-  border: 2px solid pink;
-  border-radius: 5px;
-  color: black;
-  padding: 10px;
-  box-shadow: 5px 5px 5px 0px lightgray;
-`;
-
-const PrettyP = styled.p`
-  color: white;
-`;
-
-const CustomButton = () => {
+const App = () => {
   return (
-    <div>
-      <p>
-        ad repudiandae cumque id qui. Ad nesciunt quos repellendus harum? Culpa soluta nesciunt laudantium?
-      </p>
-    </div>
-  );
-}
-
-function App() {
-
-  // Variables
-  const mensaje = "Mensaje de clase padre!";
-
-  return (
-    <AppProvider>
       <div className="App">
-        
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a> */}
-        {/* </header> */}
-       
-        {/* <TodoLayoutComponent /> */}
-
-        {/* <MainComponent /> */}
-
-        {/* <PersonalMainComponent /> */}
-
-
-        
-        
-
+        <Grid container className="content-center-x-y">
+          <Grid item xs={12} md={6} mt={10}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <AppBar position="static">
+                  <Toolbar>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} justifyContent="center">
+                      <Button sx={{ display: 'block' }}><Link to="/to-do-list" style={{textDecoration: 'none', color: 'white'}}>To Do List</Link></Button>
+                      <Button sx={{ display: 'block' }}><Link to="/" style={{textDecoration: 'none', color: 'white'}}>Rick & Morty List</Link></Button>
+                      <Button sx={{ display: 'block' }}><Link to="/" style={{textDecoration: 'none', color: 'white'}}>Admin of Posts and Users</Link></Button>
+                    </Box>
+                  </Toolbar>
+                </AppBar>
+              </Grid>
+              <Grid item xs={12}>
+                <Card>
+                  <CardContent>
+                    <Outlet />
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </div>
-    </AppProvider>
   );
 }
 
