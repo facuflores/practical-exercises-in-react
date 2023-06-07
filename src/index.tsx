@@ -5,6 +5,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import TodoLayoutComponent from './to-do-list/components/TodoLayout.component';
+import RkAndMtPanelComponent from './rick-and-morty-list/components/RkAndMtPanel.component';
+import { Provider } from 'react-redux';
+import { AppStore } from './shared/redux/App.store';
+import RkAndMtCharacterEditComponent from './rick-and-morty-list/components/character/RkAndMtCharacterEdit.component';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +16,9 @@ const root = ReactDOM.createRoot(
 
 // Routes
 const routesChilden: RouteObject[] = [
-  { path: '/to-do-list', element: <TodoLayoutComponent />},
+  { path: '/to-do-list', element: <TodoLayoutComponent /> },
+  { path: '/rick-and-morty-list/:characterId/edit', element: <RkAndMtCharacterEditComponent /> },
+  { path: '/rick-and-morty-list', element: <RkAndMtPanelComponent /> }
 ];
 
 const rootRoutes = createBrowserRouter([
@@ -21,7 +27,9 @@ const rootRoutes = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={rootRoutes} />
+    <Provider store={AppStore}>
+      <RouterProvider router={rootRoutes} />
+    </Provider>
   </React.StrictMode>
 );
 
