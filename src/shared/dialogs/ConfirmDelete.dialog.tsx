@@ -25,6 +25,9 @@ const ConfirmDeleteDialog = () => {
     if (appDialogProps.type === DialogIdEnum.RK_AND_MT_DELETE_ITEM) {
       appDispatch(OnDeleteCharacterById(appDialogProps.id));
     }
+    if (appDialogProps.onConfirm !== undefined) {
+      appDialogProps.onConfirm();
+    }
     handleClose();
   };
 

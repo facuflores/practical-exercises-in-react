@@ -4,6 +4,8 @@ import RkAndMtAppReducer from "../../rick-and-morty-list/redux/RkAndMtApp.reduce
 import RkAndMtCharacterReducer from "../../rick-and-morty-list/redux/RkAndMtCharacter.reducer";
 import RkAndMtLocationReducer from "../../rick-and-morty-list/redux/RkAndMtLocation.reducer";
 import RkAndMtEpisodeReducer from "../../rick-and-morty-list/redux/RkAndMtEpisode.reducer";
+import ApuUserReducer from "../../admin-of-post-and-users/redux/ApuUser.reducer";
+import ApuPostReducer from "../../admin-of-post-and-users/redux/ApuPost.reducer";
 
 /**
  * Store (App)
@@ -15,6 +17,8 @@ export const AppStore = configureStore({
     rkAndMtCharacter: RkAndMtCharacterReducer,
     rkAndMtLocation: RkAndMtLocationReducer,
     rkAndMtEpisode: RkAndMtEpisodeReducer,
+    apuUser: ApuUserReducer,
+    apuPost: ApuPostReducer,
   }
 });
 

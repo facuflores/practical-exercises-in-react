@@ -7,6 +7,7 @@ export type AppDeleteDialogProps = {
   id: number;
   type: string;
   message: string;
+  onConfirm?: () => void;
 };
 
 type AppDeleteDialogState = {
@@ -14,6 +15,7 @@ type AppDeleteDialogState = {
   type: string;
   message: string;
   isOpen: boolean;
+  onConfirm?: () => void;
 };
 
 type AppDialogState = {
@@ -41,7 +43,8 @@ const AppDialogSlice = createSlice({
         isOpen: false,
         id: -1,
         type: "",
-        message: ""
+        message: "",
+        onConfirm: undefined
       };
     },
     OnOpenAppDeleteDialog: (state, {payload}: PayloadAction<AppDeleteDialogProps>) => {
@@ -49,7 +52,8 @@ const AppDialogSlice = createSlice({
         isOpen: true,
         id: payload.id,
         type: payload.type,
-        message: payload.message
+        message: payload.message,
+        onConfirm: payload.onConfirm
       };
     }
   }

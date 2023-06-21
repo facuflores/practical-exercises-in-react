@@ -14,7 +14,7 @@ const App = () => {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} justifyContent="center">
                       <Button sx={{ display: 'block' }}><Link to="/to-do-list" style={{textDecoration: 'none', color: 'white'}}>To Do List</Link></Button>
                       <Button sx={{ display: 'block' }}><Link to="/rick-and-morty-list" style={{textDecoration: 'none', color: 'white'}}>Rick & Morty List</Link></Button>
-                      <Button sx={{ display: 'block' }}><Link to="/" style={{textDecoration: 'none', color: 'white'}}>Admin of Posts and Users</Link></Button>
+                      <Button sx={{ display: 'block' }}><Link to="/posts-and-users" style={{textDecoration: 'none', color: 'white'}}>Admin of Posts and Users</Link></Button>
                     </Box>
                   </Toolbar>
                 </AppBar>

@@ -9,6 +9,7 @@ import RkAndMtPanelComponent from './rick-and-morty-list/components/RkAndMtPanel
 import { Provider } from 'react-redux';
 import { AppStore } from './shared/redux/App.store';
 import RkAndMtCharacterEditComponent from './rick-and-morty-list/components/character/RkAndMtCharacterEdit.component';
+import ApuTabPanelComponent from './admin-of-post-and-users/components/ApuTabPanel.component';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -18,7 +19,8 @@ const root = ReactDOM.createRoot(
 const routesChilden: RouteObject[] = [
   { path: '/to-do-list', element: <TodoLayoutComponent /> },
   { path: '/rick-and-morty-list/:characterId/edit', element: <RkAndMtCharacterEditComponent /> },
-  { path: '/rick-and-morty-list', element: <RkAndMtPanelComponent /> }
+  { path: '/rick-and-morty-list', element: <RkAndMtPanelComponent /> },
+  { path: '/posts-and-users', element: <ApuTabPanelComponent /> }
 ];
 
 const rootRoutes = createBrowserRouter([
